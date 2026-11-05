@@ -138,7 +138,9 @@ app.delete("/api/v1/movies/:id", (req, res) => {
             });
         });
 });
-
+app.get("/", (req, res) => {
+    res.status(200).send("Mongoose Movie API is running!");
+});
 // Error handling middleware
 app.use((err, req, res, next) => {
     res.status(err.status || 500);
